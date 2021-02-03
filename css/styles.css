@@ -1,1 +1,14 @@
+		body {
+			background-color: #2D2D2D;
+		}
+		
+		h1 {
+			color: #e77518;
+			font-size: 30px;
+			font-family: 'Times New Roman', Times, serif, fixed-width;
+      }
 
+    p {
+			color: white;
+			font-family: "Source Code Pro",'Times New Roman', Times, serif, fixed-width;
+		  }
