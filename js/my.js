@@ -34,11 +34,11 @@ function Calendar(element, month, day) {
     else {
         mname = "Invalid Input"
     }
-
-    let creater = `<table><tr><td colspan = "7" align = "center" id="month" font-style = "italic">${mname}</tr></td><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>`
-    let adder = 1
-    let cDays = 1
-    let wCounter = 0
+<!-------------------------------------------------------------------------------------------------------------------------------------Creater loop----------------------------------------------------------------------------------------->   
+    let Creater = `<table><tr><td colspan = "7" align = "center" id="month" font-style = "italic">${mname}</tr></td><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>`
+    let WeekC = 0
+    let CDays = 1
+    let Adder = 1
 if(month > 12 || day > 7){
     element.innerHTML = ("<h1>Invalid Input</h1>")
 }else if(month == 0 || day == 0)
@@ -47,181 +47,177 @@ if(month > 12 || day > 7){
         if(days[month-1] == 31){
             if(day >= 6){
                 for (let i = 0; i < 42; i++) {
-                    if (wCounter == 0) {
-                        creater += '<tr>'
+                    if (WeekC == 0) {
+                        Creater += '<tr>'
                     }
-                    if (adder <= day - 1) {
-                        creater += "<td></td>"
-                        adder++
+                    if (Adder <= day - 1) {
+                        Creater += "<td></td>"
+                        Adder++
                     }
-                    else if (cDays > days[month - 1])
-                        creater += "<td></td>"
+                    else if (CDays > days[month - 1])
+                        Creater += "<td></td>"
                     else {
-                        if (cDays <= days[month - 1]) {
-                            creater += `<td>${cDays}</td>`
-                            cDays++
+                        if (CDays <= days[month - 1]) {
+                            Creater += `<td>${CDays}</td>`
+                            CDays++
                         }
                         else
-                            creater += "<td></td>"
+                            Creater += "<td></td>"
                     }
-                    if (wCounter == 6) {
-                        creater += '</tr>'
-                        wCounter = 0
+                    if (WeekC == 6) {
+                        Creater += '</tr>'
+                        WeekC = 0
                     }
                     else {
-                        wCounter++
+                        WeekC++
                     }
                 }
             }
             else{
                 for (let i = 0; i < 35; i++) {
-                    if (wCounter == 0) {
-                        creater += '<tr>'
+                    if (WeekC == 0) {
+                        Creater += '<tr>'
                     }
             
-                    if (adder <= day - 1) {
-                        creater += "<td></td>"
-                        adder++
+                    if (Adder <= day - 1) {
+                        Creater += "<td></td>"
+                        Adder++
                     }
-                    else if (cDays > days[month - 1])
-                        creater += "<td></td>"
+                    else if (CDays > days[month - 1])
+                        Creater += "<td></td>"
                     else {
-                        if (cDays <= days[month - 1]) {
-                            creater += `<td>${cDays}</td>`
-                            cDays++
+                        if (CDays <= days[month - 1]) {
+                            Creater += `<td>${CDays}</td>`
+                            CDays++
                         }
                         else
-                            creater += "<td></td>"
+                            Creater += "<td></td>"
                     }
-                    if (wCounter == 6) {
-                        creater += '</tr>'
-                        wCounter = 0
+                    if (WeekC == 6) {
+                        Creater += '</tr>'
+                        WeekC = 0
                     }
                     else {
-                        wCounter++
+                        WeekC++
                     }
                 }
             }   
         }else if(days[month-1] == 28){
             if(day >= 6){
             for (let i = 0; i < 35; i++) {
-                if (wCounter == 0) {
-                    creater += '<tr>'
+                if (WeekC == 0) {
+                    Creater += '<tr>'
                 }
                 if (adder <= day - 1) {
-                    creater += "<td></td>"
-                    adder++
+                    Creater += "<td></td>"
+                    Adder++
                 }
-                else if (cDays > days[month - 1])
-                    creater += "<td></td>"
+                else if (CDays > days[month - 1])
+                    Creater += "<td></td>"
                 else {
-                    if (cDays <= days[month - 1]) {
-                        creater += `<td>${cDays}</td>`
-                        cDays++
+                    if (CDays <= days[month - 1]) {
+                        Creater += `<td>${CDays}</td>`
+                        CDays++
                     }
                     else
-                        creater += "<td></td>"
+                        Creater += "<td></td>"
                 }
-                if (wCounter == 6) {
-                    creater += '</tr>'
-                    wCounter = 0
+                if (WeekC == 6) {
+                    Creater += '</tr>'
+                    WeekC = 0
                 }
                 else {
-                    wCounter++
+                    WeekC++
                 }
             }
         }else{
             for (let i = 0; i < 28; i++) {
-                if (wCounter == 0) {
-                    creater += '<tr>'
+                if (WeekC == 0) {
+                    Creater += '<tr>'
                 }
-                if (adder <= day - 1) {
-                    creater += "<td></td>"
-                    adder++
+                if (Adder <= day - 1) {
+                    Creater += "<td></td>"
+                    Adder++
                 }
-                else if (cDays > days[month - 1])
-                    creater += "<td></td>"
+                else if (CDays > days[month - 1])
+                    Creater += "<td></td>"
                 else {
-                    if (cDays <= days[month - 1]) {
-                        creater += `<td>${cDays}</td>`
-                        cDays++
+                    if (CDays <= days[month - 1]) {
+                        Creater += `<td>${CDays}</td>`
+                        CDays++
                     }
                     else
-                        creater += "<td></td>"
+                        Creater += "<td></td>"
                 }
-                if (wCounter == 6) {
-                    creater += '</tr>'
-                    wCounter = 0
+                if (WeekC == 6) {
+                    Creater += '</tr>'
+                    WeekC = 0
                 }
                 else {
-                    wCounter++
+                    WeekC++
                 }
             }
         }
         }else{
             if(day >= 6){
                 for (let i = 0; i < 35; i++) {
-                    if (wCounter == 0) {
-                        creater += '<tr>'
+                    if (WeekC == 0) {
+                        Creater += '<tr>'
                     }
-                    if (adder <= day - 1) {
-                        creater += "<td></td>"
-                        adder++
+                    if (Adder <= day - 1) {
+                        Creater += "<td></td>"
+                        Adder++
                     }
-                    else if (cDays > days[month - 1])
-                        creater += "<td></td>"
+                    else if (CDays > days[month - 1])
+                        Creater += "<td></td>"
                     else {
-                        if (cDays <= days[month - 1]) {
-                            creater += `<td>${cDays}</td>`
-                            cDays++
+                        if (CDays <= days[month - 1]) {
+                            Creater += `<td>${CDays}</td>`
+                            CDays++
                         }
                         else
-                            creater += "<td></td>"
+                            Creater += "<td></td>"
                     }
-                    if (wCounter == 6) {
-                        creater += '</tr>'
-                        wCounter = 0
+                    if (WeekC == 6) {
+                        Creater += '</tr>'
+                        WeekC = 0
                     }
                     else {
-                        wCounter++
+                        WeekC++
                     }
                 }
             }else{
                 for (let i = 0; i < 35; i++) {
-                    if (wCounter == 0) {
-                        creater += '<tr>'
+                    if (WeekC == 0) {
+                        Creater += '<tr>'
                     }
-                    if (adder <= day - 1) {
-                        creater += "<td></td>"
-                        adder++
+                    if (Adder <= day - 1) {
+                        Creater += "<td></td>"
+                        Adder++
                     }
-                    else if (cDays > days[month - 1])
-                        creater += "<td></td>"
+                    else if (CDays > days[month - 1])
+                        Creater += "<td></td>"
                     else {
-                        if (cDays <= days[month - 1]) {
-                            creater += `<td>${cDays}</td>`
-                            cDays++
+                        if (CDays <= days[month - 1]) {
+                            Creater += `<td>${CDays}</td>`
+                            CDays++
                         }
                         else
-                            creater += "<td></td>"
+                            Creater += "<td></td>"
                     }
             
-                    if (wCounter == 6) {
-                        creater += '</tr>'
-                        wCounter = 0
+                    if (WeekC == 6) {
+                        Creater += '</tr>'
+                        WeekC = 0
                     }
                     else {
-                        wCounter++
+                        WeekC++
                     }
                 }
             }
-            
         }
-        creater += '</table>'
-    
-        element.innerHTML = creater;
+        Creater += '</table>'
+        element.innerHTML = Creater;
         }
     }
-    
-
 Calendar(Head, input1, input2)
