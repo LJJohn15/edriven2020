@@ -3,9 +3,7 @@ input1 = prompt("Month 1-12")
 input2 = prompt("Start Day 1-7")
 function Calendar(element, month, day) {
     const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
     
-
     let mname = ''
     if (month == 1)
         mname = 'JANUARY'
@@ -34,7 +32,6 @@ function Calendar(element, month, day) {
     else {
         mname = "Invalid Input"
     }
-<!-------------------------------------------------------------------------------------------------------------------------------------Creater loop----------------------------------------------------------------------------------------->   
     let Creater = `<table><tr><td colspan = "7" align = "center" id="month" font-style = "italic">${mname}</tr></td><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>`
     let WeekC = 0
     let CDays = 1
